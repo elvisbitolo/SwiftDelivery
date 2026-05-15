@@ -1,6 +1,4 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyA8T1P2X7huSvV1w3VRGRM93PWvhbcqTXE",
   authDomain: "hack-14ae1.firebaseapp.com",
   projectId: "hack-14ae1",
@@ -10,6 +8,6 @@ const firebaseConfig = {
   measurementId: "G-QBYZYZGV28"
 };
 
-const app = initializeApp(firebaseConfig);
-
-export const db = getFirestore(app);
+export const hasFirebaseConfig = () => {
+  return Object.values(firebaseConfig).every((value) => value);
+};
