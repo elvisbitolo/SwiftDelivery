@@ -1,16 +1,6 @@
 export const languages = [
   "English",
   "Kiswahili",
-  "Kikuyu",
-  "Kisii",
-  "Luhya",
-  "Meru",
-  "Maasai",
-  "Kamba",
-  "Luo",
-  "Kalenjin",
-  "Turkana",
-  "Somali",
 ];
 
 export const counties = [

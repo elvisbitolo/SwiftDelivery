@@ -39,5 +39,17 @@ service cloud.firestore {
       allow create: if signedIn()
         && (request.auth.uid == request.resource.data.sellerId || request.auth.uid == request.resource.data.driverId);
     }
+
+    match /calls/{callId} {
+      allow read, update, delete: if signedIn()
+        && request.auth.uid in resource.data.participantIds;
+      allow create: if signedIn()
+        && request.auth.uid in request.resource.data.participantIds;
+
+      match /{candidateCollection}/{candidateId} {
+        allow read, create: if signedIn()
+          && request.auth.uid in get(/databases/$(database)/documents/calls/$(callId)).data.participantIds;
+      }
+    }
   }
 }

@@ -1,6 +1,10 @@
 import admin from "firebase-admin";
 
-const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+const rawPrivateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+// Treat the placeholder shipped in .env.example as "not configured"
+const privateKey =
+  rawPrivateKey && !rawPrivateKey.includes("replace_me") ? rawPrivateKey : null;
+
 const hasServiceAccount =
   process.env.FIREBASE_PROJECT_ID &&
   process.env.FIREBASE_CLIENT_EMAIL &&

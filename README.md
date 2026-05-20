@@ -1,4 +1,4 @@
-# Delivery Kenya
+# SwiftDelivery 
 
 A full-stack delivery marketplace for two user types: sellers and drivers. Sellers find verified drivers for client deliveries, drivers discover sellers who need delivery help, both sides can chat, choose comfortable Kenyan languages, share browser location, and record cash or M-Pesa delivery payments.
 
